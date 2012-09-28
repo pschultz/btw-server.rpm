@@ -1,7 +1,8 @@
-NAME    := btw-server
-VERSION := 4.16
-ARCH    := noarch
-OS      := el6
+NAME          := btw-server
+VERSION       := 4.16
+ARCH          := noarch
+OS            := el6
+MEDIAFIRE_URL := http://www.mediafire.com/?y4xk0ufq42lmha2
 
 ITERATION    := 1
 DESCRIPTION  := [pschultz] Better Than Wolves is a single-player Minecraft mod that not only adds new items and blocks, but also provides incredible functionality for engineering and design while maintaining the original feel of Minecraft.
@@ -14,7 +15,6 @@ JARBALL        := $(NAME).jar
 MC_JARBALL     := minecraft_server.jar
 ZIPBALL        := btw-mod.zip
 JARBALL_URL    := https://s3.amazonaws.com/MinecraftDownload/launcher/$(MC_JARBALL)
-ZIPBALL_URL    := http://199.91.154.90/4ao8nralvzog/y4xk0ufq42lmha2/BTWMod4-16.zip
 
 INST_PREFIX  := opt/$(NAME)
 INIT_SCRIPT  := etc/init.d/$(NAME)
@@ -69,8 +69,11 @@ $(JARBALL): $(MC_JARBALL) $(BUILDDIR)/$(SOURCEDIR)
 $(BUILDDIR)/$(SOURCEDIR): $(BUILDDIR) $(ZIPBALL)
 	unzip -q -d '$(BUILDDIR)' '$(ZIPBALL)' '$(SOURCEDIR)/*'
 
+# Poor mans screen scraper, because mediafire doesn't provide static urls.
+# Not sure if greping after some js variable is future proof though.
 $(ZIPBALL):
-	wget '$(ZIPBALL_URL)' -O '$@'
+	export ZIPBALL_URL='$(shell curl '$(MEDIAFIRE_URL)' | grep -Eo 'kNO = ".*"' | grep -Eo 'http://.*zip')'; \
+		wget "$$ZIPBALL_URL" -O '$@'
 
 $(BUILDDIR):
 	mkdir -p '$@'
