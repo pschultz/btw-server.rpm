@@ -20,8 +20,8 @@ INST_PREFIX  := opt/$(NAME)
 INIT_SCRIPT  := etc/init.d/$(NAME)
 SYSCONFIG    := etc/sysconfig/$(NAME)
 
-INIT_SCRIPT_SRC := https://github.com/pschultz/minecraft_server.init/raw/master/init.d/minecraft_server
-SYSCONFIG_SRC   := https://github.com/pschultz/minecraft_server.init/raw/master/sysconfig/minecraft_server
+INIT_SCRIPT_SRC := https://github.com/pschultz/minecraft-server.init/raw/master/init.d/minecraft-server
+SYSCONFIG_SRC   := https://github.com/pschultz/minecraft-server.init/raw/master/sysconfig/minecraft-server
 
 BUILDDIR   := build
 SOURCEDIR  := MINECRAFT_SERVER-JAR
