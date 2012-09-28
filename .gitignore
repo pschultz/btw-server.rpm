@@ -1,0 +1,7 @@
+*.rpm
+*.jar
+*.zip
+inst_root/etc/sysconfig/btw-server
+inst_root/etc/init.d/btw-server
+inst_root/var/run/btw-server/BTWConfig.txt
+build
