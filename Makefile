@@ -90,6 +90,7 @@ $(INSTALL_ROOT)/$(RUNDIR):
 clean: 
 	rm -f '$(PACKAGE)'
 
-#rm -rf $(MC_JARBALL) $(JARBALL) $(ZIPBALL) $(INSTALL_ROOT)/$(INST_PREFIX) $(BUILDDIR) $(INSTALL_ROOT)/$(RUNDIR)
 distclean: clean
-	rm -rf '$(JARBALL)' '$(INSTALL_ROOT)/etc' '$(INSTALL_ROOT)/var' '$(INSTALL_ROOT)/$(INST_PREFIX)/$(JARBALL)' '$(BUILDDIR)'
+	rm -rf '$(JARBALL)' '$(ZIPBALL)' '$(MC_JARBALL)' \
+	       '$(INSTALL_ROOT)/etc' '$(INSTALL_ROOT)/var' \
+	       '$(INSTALL_ROOT)/$(INST_PREFIX)/$(JARBALL)' '$(BUILDDIR)'
