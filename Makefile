@@ -1,8 +1,8 @@
 NAME          := btw-server
-VERSION       := 4.16
+VERSION       := 4.20
 ARCH          := noarch
 OS            := el6
-MEDIAFIRE_URL := http://www.mediafire.com/?y4xk0ufq42lmha2
+MEDIAFIRE_URL := http://www.mediafire.com/?n51r6hk2pgee93e
 
 ITERATION    := 1
 DESCRIPTION  := [pschultz] Better Than Wolves is a single-player Minecraft mod that not only adds new items and blocks, but also provides incredible functionality for engineering and design while maintaining the original feel of Minecraft.
